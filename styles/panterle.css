@@ -1,0 +1,438 @@
+/* ============================================
+   MODO - LA PANTERLE
+   ============================================ */
+
+/* Header común */
+.juego-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--esp-3);
+    margin-bottom: var(--esp-6);
+    padding-bottom: var(--esp-4);
+    border-bottom: 1px solid var(--gris-850);
+}
+
+.juego-btn-volver {
+    font-size: 13px;
+    color: var(--gris-400);
+    padding: 6px 10px;
+    border-radius: var(--radio-sm);
+    transition: all var(--transicion);
+    font-weight: 600;
+}
+
+.juego-btn-volver:hover {
+    color: var(--dorado);
+    background: var(--gris-900);
+}
+
+.juego-titulo-header {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--dorado);
+}
+
+.juego-espacio {
+    min-width: 60px;
+    text-align: right;
+}
+
+/* ============================================
+   PANTALLA INICIAL
+   ============================================ */
+.panterle-inicio {
+    text-align: center;
+    padding: var(--esp-8) 0;
+}
+
+.panterle-inicio-icono {
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: var(--esp-6);
+}
+
+.panterle-inicio-titulo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: var(--esp-4);
+    background: linear-gradient(180deg, var(--blanco) 0%, var(--dorado) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.panterle-inicio-descripcion {
+    font-size: 14px;
+    color: var(--gris-400);
+    line-height: 1.6;
+    margin-bottom: var(--esp-8);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panterle-inicio-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--esp-6);
+    margin-bottom: var(--esp-8);
+    padding: var(--esp-5);
+    background: var(--gris-950);
+    border: 1px solid var(--gris-850);
+    border-radius: var(--radio-lg);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.panterle-inicio-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.panterle-inicio-info-valor {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--dorado);
+}
+
+.panterle-inicio-info-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gris-500);
+    font-weight: 600;
+}
+
+.panterle-btn-empezar {
+    width: 100%;
+    max-width: 320px;
+    padding: 18px 32px;
+    background: var(--dorado);
+    color: var(--negro);
+    border-radius: var(--radio-md);
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transicion);
+}
+
+.panterle-btn-empezar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(245, 184, 0, 0.3);
+    background: var(--dorado-claro);
+}
+
+.panterle-btn-empezar:active {
+    transform: translateY(0);
+}
+
+.panterle-btn-secundario {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 24px;
+    background: transparent;
+    color: var(--gris-300);
+    border: 1px solid var(--gris-700);
+    border-radius: var(--radio-md);
+    font-size: 13px;
+    font-weight: 600;
+    transition: all var(--transicion);
+    margin-top: var(--esp-3);
+}
+
+.panterle-btn-secundario:hover {
+    border-color: var(--dorado);
+    color: var(--dorado);
+}
+
+/* ============================================
+   RONDA
+   ============================================ */
+.panterle-ronda {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-5);
+}
+
+.panterle-puntuacion {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--negro);
+    background: var(--dorado);
+    padding: 4px 10px;
+    border-radius: var(--radio-full);
+}
+
+.panterle-timer {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-3);
+}
+
+.panterle-timer-barra {
+    flex: 1;
+    height: 6px;
+    background: var(--gris-850);
+    border-radius: var(--radio-full);
+    overflow: hidden;
+}
+
+.panterle-timer-relleno {
+    height: 100%;
+    background: var(--dorado);
+    border-radius: var(--radio-full);
+    width: 100%;
+    transition: width 0.1s linear, background 0.3s ease;
+}
+
+.panterle-timer-relleno.urgente {
+    background: var(--error);
+}
+
+.panterle-timer-texto {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--blanco);
+    min-width: 32px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.panterle-audio-indicador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--esp-3);
+    padding: var(--esp-4);
+    background: var(--gris-950);
+    border: 1px solid var(--gris-850);
+    border-radius: var(--radio-lg);
+    font-size: 14px;
+    color: var(--gris-300);
+    transition: all var(--transicion);
+}
+
+.panterle-audio-indicador.acierto {
+    border-color: var(--exito);
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--exito);
+}
+
+.panterle-audio-indicador.fallo {
+    border-color: var(--error);
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error);
+}
+
+.panterle-audio-icono {
+    font-size: 20px;
+}
+
+.panterle-pregunta {
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.panterle-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-2);
+}
+
+.panterle-opcion {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-4);
+    padding: var(--esp-4) var(--esp-5);
+    background: var(--gris-950);
+    border: 1px solid var(--gris-850);
+    border-radius: var(--radio-md);
+    text-align: left;
+    transition: all var(--transicion);
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.panterle-opcion:not(:disabled):hover {
+    border-color: var(--dorado);
+    background: var(--gris-900);
+    transform: translateX(4px);
+}
+
+.panterle-opcion:disabled {
+    cursor: default;
+}
+
+.panterle-opcion-letra {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gris-900);
+    border-radius: var(--radio-sm);
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--gris-400);
+    flex-shrink: 0;
+    transition: all var(--transicion);
+}
+
+.panterle-opcion-texto {
+    flex: 1;
+}
+
+.panterle-opcion.correcta {
+    border-color: var(--exito);
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--exito);
+}
+
+.panterle-opcion.correcta .panterle-opcion-letra {
+    background: var(--exito);
+    color: var(--negro);
+}
+
+.panterle-opcion.incorrecta {
+    border-color: var(--error);
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--error);
+}
+
+.panterle-opcion.incorrecta .panterle-opcion-letra {
+    background: var(--error);
+    color: var(--negro);
+}
+
+/* ============================================
+   PANTALLA FINAL
+   ============================================ */
+.panterle-final {
+    text-align: center;
+    padding: var(--esp-8) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--esp-5);
+}
+
+.panterle-final-emoji {
+    font-size: 72px;
+    line-height: 1;
+}
+
+.panterle-final-puntuacion {
+    display: flex;
+    align-items: baseline;
+    gap: var(--esp-2);
+}
+
+.panterle-final-numero {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--dorado);
+}
+
+.panterle-final-total {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gris-500);
+}
+
+.panterle-final-mensaje {
+    font-size: 16px;
+    color: var(--gris-300);
+    margin-bottom: var(--esp-4);
+}
+
+.panterle-final-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: var(--esp-3);
+    width: 100%;
+    align-items: center;
+}
+
+/* ============================================
+   PREPARANDO
+   ============================================ */
+.panterle-preparando {
+    text-align: center;
+    padding: var(--esp-8) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--esp-5);
+}
+
+.panterle-preparando-icono {
+    font-size: 72px;
+    line-height: 1;
+    animation: pulso 1.5s ease-in-out infinite;
+}
+
+@keyframes pulso {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+}
+
+.panterle-preparando-titulo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.panterle-preparando-descripcion {
+    font-size: 14px;
+    color: var(--gris-400);
+    margin: 0;
+}
+
+.panterle-preparando-barra {
+    width: 100%;
+    max-width: 320px;
+    height: 8px;
+    background: var(--gris-850);
+    border-radius: var(--radio-full);
+    overflow: hidden;
+    margin-top: var(--esp-4);
+}
+
+.panterle-preparando-relleno {
+    height: 100%;
+    width: 0%;
+    background: var(--dorado);
+    border-radius: var(--radio-full);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.panterle-preparando-contador {
+    font-family: var(--fuente-mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gris-400);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   BUSCADOR EN LA RONDA
+   ============================================ */
+.panterle-buscador-contenedor {
+    margin-top: var(--esp-4);
+    position: relative;
+    z-index: 10;
+}

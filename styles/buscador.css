@@ -1,0 +1,90 @@
+/* ============================================
+   BUSCADOR DE CANCIONES
+   ============================================ */
+
+.buscador {
+    position: relative;
+    width: 100%;
+}
+
+.buscador-input {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--gris-950);
+    border: 1px solid var(--gris-850);
+    border-radius: var(--radio-md);
+    color: var(--blanco);
+    font-size: 15px;
+    outline: none;
+    transition: all var(--transicion);
+}
+
+.buscador-input:focus {
+    border-color: var(--dorado);
+    background: var(--gris-900);
+    box-shadow: 0 0 0 3px rgba(245, 184, 0, 0.1);
+}
+
+.buscador-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.buscador-input::placeholder {
+    color: var(--gris-500);
+}
+
+/* Resultados */
+.buscador-resultados {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--gris-900);
+    border: 1px solid var(--gris-800);
+    border-radius: var(--radio-md);
+    overflow: hidden;
+    z-index: 20;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.buscador-resultados.oculto {
+    display: none;
+}
+
+.buscador-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: var(--blanco);
+    text-align: left;
+    cursor: pointer;
+    transition: background var(--transicion);
+    border-bottom: 1px solid var(--gris-850);
+}
+
+.buscador-item:last-child {
+    border-bottom: none;
+}
+
+.buscador-item:hover {
+    background: var(--gris-850);
+}
+
+.buscador-item-titulo {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blanco);
+}
+
+.buscador-item-feat {
+    font-size: 11px;
+    color: var(--dorado);
+    font-style: italic;
+}
